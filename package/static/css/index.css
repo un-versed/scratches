@@ -1,0 +1,86 @@
+@font-face {
+  font-family: 'Ubuntu Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu Mono'), local('UbuntuMono-Regular'), url(../fonts/Ubuntu-Mono.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2212, U+2215;
+}
+
+* {
+  -webkit-user-select: none;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: white;
+  height: calc(100vh);
+  font-family: 'Ubuntu Mono';
+}
+
+header {
+  position: absolute;
+  top: 0;
+  height: 30px;
+  left: 0;
+  right: 0;
+  -webkit-app-region: drag;
+}
+
+.CodeMirror {
+  height: 100%;
+}
+
+* {
+  font-family: 'Ubuntu Mono';
+  font-size: 12px;
+}
+
+.wrapper {
+  position: absolute;
+  top: 45px;
+  bottom: 0;
+  width: 50%;
+}
+
+.wrapper.editor {
+  left: 0;
+  padding-left: 20px;
+}
+
+.wrapper.output {
+  right: 0;
+  padding-left: 20px;
+}
+
+.sep {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  bottom: 0;
+  left: 50%;
+  background: black;
+  z-index: 100;
+}
+
+body.hide-output .sep {
+  display: none;
+}
+
+body.hide-output .wrapper.editor {
+  right: 0;
+  width: initial;
+  z-index: 10;
+}
+
+#output + .CodeMirror .CodeMirror-line::selection,
+#output + .CodeMirror .CodeMirror-line > span::selection,
+#output + .CodeMirror .CodeMirror-line > span > span::selection {
+  background: #01bafe;
+}
+
+.CodeMirror-line::selection,
+.CodeMirror-line > span::selection,
+.CodeMirror-line > span > span::selection {
+  background: #01bafe;
+}
